@@ -54,3 +54,30 @@ def notificacion(segundos,separador):
             message = "Espero que tu tarea , ya es este hecha Adioss... :) ",
             timeout=15,
             )
+
+
+fecha_actual = datetime.date.today()
+opcion=1
+separador=("*"*40)
+contador=1
+while opcion==1:
+    print(separador + "BIENVENIDO AL REGISTRO DE TAREAS : "+ separador)
+    archivoA=open("./archivos/tareas.txt" , 'a')
+    archivoA.write(f"TAREAS DEL {fecha_actual} :)" +"\n" )
+    cuantas=int(input("Cuantas tareas vas a registrar : "))
+    for tarea in range(cuantas):
+        tarea=(input("Dime la tarea : "))
+        contador2=str(contador)
+        archivoA.write("TAREA " + contador2+" "+ tarea+  "\n" )
+        contador=contador+1
+    archivoA.write("///////////////////////////////////////////////////////////////" +"\n" )
+    print(separador)
+    print("Ya estan registradas las tareas en el documento .txt")
+    print("Porfavor no cierres este programa :)")
+    print(separador)
+    archivoA.close()
+    
+    segundos=int(input("Cuantos minutos quieres que pasen para que te mande una notificacion : "))
+    print(separador)
+    notificacion(segundos,separador)
+    opcion=2
