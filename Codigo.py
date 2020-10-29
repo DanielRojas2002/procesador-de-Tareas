@@ -62,7 +62,7 @@ separador=("*"*40)
 contador=1
 while opcion==1:
     print(separador + "BIENVENIDO AL REGISTRO DE TAREAS : "+ separador)
-    archivoA=open("./archivos/tareas.txt" , 'a')
+    archivoA=open("./archivos/tarea.txt" , 'a')
     archivoA.write(f"TAREAS DEL {fecha_actual} :)" +"\n" )
     cuantas=int(input("Cuantas tareas vas a registrar : "))
     for tarea in range(cuantas):
